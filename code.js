@@ -27,28 +27,37 @@ const renderPerson = function(person) {
   // Your Code Here
   let divElement = document.createElement("div");
   let h2Element = document.createElement("h2");
-  let h4Element = document.createElement("h4");
+  let h4Element1 = document.createElement("h4");
+  let h4Element2 = document.createElement("h4");
   let ulElement = document.createElement("ul");
+  let pElement = document.createElement("p");
   let firstName = examplePerson.firstName;
   let lastName = examplePerson.lastName;
+  let hobbies = examplePerson.hobbies;
+  let address = examplePerson.address;
 
   document.body.append(divElement);
 
   divElement.append(h2Element);
-  divElement.append(h4Element);
-  divElement.append(ulElement);
   divElement.className = "card";
-
   h2Element.innerText = `${firstName} ${lastName}`;
-  h4Element.innerText = `Hobbies`;
-  
-  for (let index = 0; index < examplePerson.hobbies.length; index++) {
+
+  divElement.append(h4Element1);
+  h4Element1.innerText = `Hobbies`;
+
+  divElement.append(ulElement);
+  for (let index = 0; index < hobbies.length; index++) {
     let liElement = document.createElement("li");
 
     ulElement.append(liElement);
-    liElement.innerText = `${examplePerson.hobbies[index]}`;
+    liElement.innerText = `${hobbies[index]}`;
   }
 
+  divElement.append(h4Element2);
+  h4Element2.innerText = `Shipping Address`;
+
+  divElement.append(pElement);
+  pElement.innerText = `${firstName} ${lastName} \n ${address.number} ${address.street} \n ${address.city}, ${address.state} ${address.zipcode}`;
 }
 
 renderPerson(examplePerson);
