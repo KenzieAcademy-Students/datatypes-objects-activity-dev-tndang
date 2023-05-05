@@ -25,7 +25,13 @@ to the instructions on my.kenzie
 
 const renderPerson = function(person) {
   // Your Code Here
+  let divElement = document.createElement("div");
+  let h2Element = document.createElement("h2");
 
+  document.body.append(divElement);
+  divElement.append(h2Element);
+  divElement.className = "card";
+  h2Element.innerText = "Homer Simpson";
 
 }
 
