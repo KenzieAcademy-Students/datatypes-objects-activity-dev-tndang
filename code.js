@@ -29,12 +29,15 @@ const renderPerson = function(person) {
   let h2Element = document.createElement("h2");
   let h4Element1 = document.createElement("h4");
   let h4Element2 = document.createElement("h4");
+  let h4Element3 = document.createElement("h4");
   let ulElement = document.createElement("ul");
-  let pElement = document.createElement("p");
+  let pElement1 = document.createElement("p");
+  let pElement2 = document.createElement("p");
   let firstName = examplePerson.firstName;
   let lastName = examplePerson.lastName;
   let hobbies = examplePerson.hobbies;
   let address = examplePerson.address;
+  let favoriteColor = examplePerson["favorite color"];
 
   document.body.append(divElement);
 
@@ -44,7 +47,6 @@ const renderPerson = function(person) {
 
   divElement.append(h4Element1);
   h4Element1.innerText = `Hobbies`;
-
   divElement.append(ulElement);
   for (let index = 0; index < hobbies.length; index++) {
     let liElement = document.createElement("li");
@@ -55,9 +57,13 @@ const renderPerson = function(person) {
 
   divElement.append(h4Element2);
   h4Element2.innerText = `Shipping Address`;
+  divElement.append(pElement1);
+  pElement1.innerText = `${firstName} ${lastName} \n ${address.number} ${address.street} \n ${address.city}, ${address.state} ${address.zipcode}`;
 
-  divElement.append(pElement);
-  pElement.innerText = `${firstName} ${lastName} \n ${address.number} ${address.street} \n ${address.city}, ${address.state} ${address.zipcode}`;
+  divElement.append(h4Element3);
+  h4Element3.innerText = `Favorite Color`;
+  divElement.append(pElement2);
+  pElement2.innerText = `${favoriteColor}`
 }
 
 renderPerson(examplePerson);
