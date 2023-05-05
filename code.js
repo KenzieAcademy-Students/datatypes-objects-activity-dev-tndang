@@ -4,7 +4,7 @@ Objects - Part One
 */
 
 // Do not modify this object here.
-let examplePerson = {
+let person = {
   firstName: "Homer",
   lastName: "Simpson",
   hobbies: ["Television", "Eating Donuts", "Playing with his Kids"],
@@ -33,11 +33,11 @@ const renderPerson = function(person) {
   let ulElement = document.createElement("ul");
   let pElement1 = document.createElement("p");
   let pElement2 = document.createElement("p");
-  let firstName = examplePerson.firstName;
-  let lastName = examplePerson.lastName;
-  let hobbies = examplePerson.hobbies;
-  let address = examplePerson.address;
-  let favoriteColor = examplePerson["favorite color"];
+  let firstName = person.firstName;
+  let lastName = person.lastName;
+  let hobbies = person.hobbies;
+  let address = person.address;
+  let favoriteColor = person["favorite color"];
 
   document.body.append(divElement);
 
@@ -66,7 +66,7 @@ const renderPerson = function(person) {
   pElement2.innerText = `${favoriteColor}`
 }
 
-renderPerson(examplePerson);
+renderPerson(person);
 
 /*
 ---------------------------------------------------------------------------
@@ -82,9 +82,21 @@ render your person to the page.
 */
 
 // Your Code Here
+let myExamplePerson = {
+  firstName: "Rimuru",
+  lastName: "Tempest",
+  hobbies: ["Relaxing on Shion's Lap", "Drinking Tea", "Exploring"],
+  address: {
+    number: 1,
+    street: "Rimuru's House",
+    city: "Jura",
+    state: "Tempest Federation",
+    zipcode: "15000",
+  },
+  "favorite color": "Blue",
+};
 
-
-
+renderPerson(myExamplePerson);
 
 /*
 ---------------------------------------------------------------------------
