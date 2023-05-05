@@ -4,7 +4,7 @@ Objects - Part One
 */
 
 // Do not modify this object here.
-let person = {
+let examplePerson = {
   firstName: "Homer",
   lastName: "Simpson",
   hobbies: ["Television", "Eating Donuts", "Playing with his Kids"],
@@ -66,7 +66,7 @@ const renderPerson = function(person) {
   pElement2.innerText = `${favoriteColor}`
 }
 
-renderPerson(person);
+renderPerson(examplePerson);
 
 /*
 ---------------------------------------------------------------------------
@@ -108,13 +108,19 @@ Follow the instruction on my.kenzie
 
 const changePersonToBart = function(person) {
   // Your Code Here
+  person.firstName = `Bart`
+  person.hobbies.pop();
+  person.hobbies.push(`Skateboarding`);
+  person[`favorite color`] = `orange`;
 
-
+  return person;
 }
 
 // Then, call the function with the argument examplePerson
 // Assign the result to a new variable.  Then call renderPerson with the 
 // new variable
+let examplePerson2 = changePersonToBart(examplePerson);
+renderPerson(examplePerson2);
 
 /*
 ---------------------------------------------------------------------------
