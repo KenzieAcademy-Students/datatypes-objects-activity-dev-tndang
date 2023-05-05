@@ -27,13 +27,27 @@ const renderPerson = function(person) {
   // Your Code Here
   let divElement = document.createElement("div");
   let h2Element = document.createElement("h2");
+  let h4Element = document.createElement("h4");
+  let ulElement = document.createElement("ul");
   let firstName = examplePerson.firstName;
   let lastName = examplePerson.lastName;
 
   document.body.append(divElement);
+
   divElement.append(h2Element);
+  divElement.append(h4Element);
+  divElement.append(ulElement);
   divElement.className = "card";
+
   h2Element.innerText = `${firstName} ${lastName}`;
+  h4Element.innerText = `Hobbies`;
+  
+  for (let index = 0; index < examplePerson.hobbies.length; index++) {
+    let liElement = document.createElement("li");
+
+    ulElement.append(liElement);
+    liElement.innerText = `${examplePerson.hobbies[index]}`;
+  }
 
 }
 
